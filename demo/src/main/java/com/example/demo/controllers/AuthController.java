@@ -38,6 +38,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+
   @Autowired
   AuthenticationManager authenticationManager;
 
@@ -60,7 +61,8 @@ public class AuthController {
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
     Authentication authentication = authenticationManager.authenticate(
-        new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+        new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
+            loginRequest.getPassword()));
 
     SecurityContextHolder.getContext().setAuthentication(authentication);
 
@@ -89,7 +91,8 @@ public class AuthController {
           String token = jwtUtils.generateTokenFromUsername(user.getUsername());
           return ResponseEntity.ok(new TokenRefreshResponse(token, requestRefreshToken));
         })
-        .orElseThrow(() -> new TokenRefreshException(requestRefreshToken, "Refresh token is not in database!"));
+        .orElseThrow(() -> new TokenRefreshException(requestRefreshToken,
+            "Refresh token is not in database!"));
   }
 
   @PostMapping("/signup")
