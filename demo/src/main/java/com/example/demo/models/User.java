@@ -33,12 +33,12 @@ public class User {
   private String username;
 
   @NotBlank
-  @Size(max = 20)
+  @Size(max = 50)
   @Email
   private String email;
 
   @NotBlank
-  @Size(max = 20)
+  @Size(max = 120)
   private String password;
 
 
