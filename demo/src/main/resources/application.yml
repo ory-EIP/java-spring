@@ -18,4 +18,5 @@ spring:
 demo:
   app:
     jwtSecret: ======================BezKoder=Spring===========================
-    jwtExpirationMs: 86400000
+    jwtExpirationMs: 3600000
+    jwtRefreshExpirationMs: 86400000
