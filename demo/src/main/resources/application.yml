@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:50758/mydatabase
+    url: jdbc:postgresql://localhost:53525/mydatabase
     username: myuser
     password: secret
 
@@ -20,3 +20,7 @@ demo:
     jwtSecret: ============================================BezKoder=Spring=================================================
     jwtExpirationMs: 3600000
     jwtRefreshExpirationMs: 86400000
+    # Swagger
+#  openapi:
+#    dev-url: http://localhost:8080
+#    prod-url: https://demo.com/doc
